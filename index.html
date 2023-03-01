@@ -32,11 +32,6 @@
   <!-- Font Awesome 5 -->
   <script defer src="https://kit.fontawesome.com/3713245705.js" crossorigin="anonymous"></script>
 
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Custom Script -->
-  <script defer src="script.js"></script>
 </head>
 <body style="text-align: center;">
   <h1 class="display-1">Download your Sports SEC ID Card</h1>
@@ -45,6 +40,20 @@
   <input type="submit" value="Download" class="btn btn-primary" onclick="download()">
   <div id="download" class="mt-5"></div>
   <script>
+    // Get the input field
+    var input = document.getElementById("roll");
+
+    // Execute a function when the user presses a key on the keyboard
+    input.addEventListener("keypress", function(event) {
+      // If the user presses the "Enter" key on the keyboard
+      if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        download();
+      }
+    });
+
     function download(){
       fetch("participants/list")
         .then((response) => response.text(response))
