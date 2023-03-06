@@ -4,10 +4,12 @@
 
 mkdir -p id
 echo "Making all the ID Cards"
-template="template.png"
+template="template.jpg"
 while IFS="" read -r line || [ -n "$line" ] ; do
 	name="$(echo "$line" | cut -f2 -d'	')"
   echo $name
 	id="$(echo "$line" | cut -f1 -d'	')"
 	./badge "$template" "$id" "$name" &
+  while [ "$(jobs | wc -l)" -gt 40 ] ; do sleep 0.1 ; done
+
 done <list

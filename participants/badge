@@ -10,7 +10,7 @@ if [ ! -r "$1" ]; then
 	exit 1
 fi
 src="$1"
-dest="id/${2}.png"
+dest="id/${2}.jpg"
 name="$3"
 qr="qr/$2".png
 xactcode="$2"
@@ -26,7 +26,7 @@ convert \
 	-pointsize 65 \
 	-fill "#000000ff" \
 	-font "Comfortaa-Bold" \
-	-annotate +0+540 "$(./initials.py "$name")" \
+	-annotate +0+540 "$nameshort" \
 	-fill "#bda8e9" \
 	-font "Open-Sans-Bold" \
 	-pointsize 90 \

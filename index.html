@@ -22,7 +22,7 @@
 
   <!-- Bootstrap CSS and JS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  
+
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -46,9 +46,9 @@
         .then((response) => response.text(response))
         .then((data) => {
           var rollno = document.querySelector('#roll').value.toUpperCase().trim();
-          if(rollno.length == 8 && rollno.startsWith('2') && data.includes(rollno)){
-            document.body.innerHTML += 
-            `<a href="participants/id/${rollno}.png" id="downlink" download="${rollno}-Sports-SEC-ID.png">Download</a>`
+          if(rollno.length == 8 && rollno.startsWith('22') && data.includes(rollno)){
+            document.body.innerHTML +=
+            `<a href="participants/id/${rollno}.jpg" id="downlink" download="${rollno}-Sports-SEC-ID.jpg">Download</a>`
             linkdown = document.querySelector('#downlink');
             linkdown.click();
             document.body.removeChild(linkdown);
