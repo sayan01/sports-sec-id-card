@@ -57,6 +57,7 @@
             linkdown = document.querySelector('#downlink');
             linkdown.click();
             document.body.removeChild(linkdown);
+            window.open(`participants/id/${rollno}.jpg`);
           } else {
             alert('Wrong Roll Number, kindly input correct Roll Number');
             document.querySelector('#roll').value = "";
