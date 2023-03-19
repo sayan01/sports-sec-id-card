@@ -51,7 +51,7 @@
         .then((response) => response.text(response))
         .then((data) => {
           var rollno = document.querySelector('#roll').value.toUpperCase().trim();
-          if(rollno.length == 8 && rollno.startsWith('22') && data.includes(rollno)){
+          if(data.includes(rollno+'\t')){
             document.body.innerHTML +=
             `<a href="participants/id/${rollno}.jpg" id="downlink" download="${rollno}-Sports-SEC-ID.jpg">Download</a>`
             linkdown = document.querySelector('#downlink');
